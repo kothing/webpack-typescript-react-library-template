@@ -1,4 +1,4 @@
-# React-Typescript-Library-Template
+# Webpack-React-Typescript-Library-Template
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/26560610/239584268-8a292af2-432c-4459-8f81-ff9695622bde.png"/>
