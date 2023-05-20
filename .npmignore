@@ -1,0 +1,17 @@
+# standard ignores
+node_modules/
+
+# ignore src
+src/**/*
+
+# dev config file
+.husky
+.eslintignore
+.prettierignore
+.prettierrc
+.stylelintignore
+.stylelintrc
+index.html
+tsconfig.json
+webpack.config.ts
+webpack.lib.config.ts

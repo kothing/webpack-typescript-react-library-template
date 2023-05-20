@@ -1,0 +1,117 @@
+{
+  "name": "webpack-typescript-react-library-template",
+  "version": "0.0.0",
+  "description": "React typescript component creator boilerplate using webpack, react and typescript",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.esm.js",
+  "unpkg": "dist/index.min.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kothing/webpack-typescript-react-library-template"
+  },
+  "homepage": "https://github.com/Kothing/webpack-typescript-react-library-template#readme",
+  "bugs": {
+    "url": "https://github.com/Kothing/webpack-typescript-react-library-template/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development --hot",
+    "build:website": "webpack --mode production",
+    "build:lib": "npm run build:types && npm run bundle",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "bundle": "webpack --config webpack.lib.config.ts",
+    "eslint": "eslint . --ext .js,.cjs,.ts,.jsx,.tsx, --quiet --fix --ignore-path ./.gitignore",
+    "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,css,html,json}' ",
+    "stylelint": "stylelint src/**/*.{css,less,scss,sass} --fix",
+    "prepare": "git init && husky install",
+    "type-check": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "react",
+    "library",
+    "component",
+    "typescript"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "author": "Kothing",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/runtime": "^7.21.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.2.5",
+    "@types/node": "^20.2.1",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "less": "^4.1.3",
+    "lint-staged": "^13.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.5.1",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^3.1.1",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.8.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "lint-staged": {
+    "./**/*.{js,cjs,ts,jsx,tsx}": [
+      "eslint --fix --ignore-path ./.gitignore"
+    ],
+    "./**/*.{css,less,scss,sass}": [
+      "stylelint --fix"
+    ],
+    "./**/*.{js,cjs,ts,css,scss,sass,html,json,md}": [
+      "prettier . --loglevel warn --write "
+    ]
+  }
+}
