@@ -15,7 +15,6 @@ This template is built with the following technologies:
 - Bundling: **Webpack**
 - Transpiling: **Babel**
 - Lint Staged: **Husky**
-- **React Refresh**
 - **Development** & **Production** configurations
 - Declarations for **png** and **svg** files
   
