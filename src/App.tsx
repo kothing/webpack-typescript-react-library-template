@@ -1,5 +1,5 @@
 import React from "react";
-import Hellow from "./lib/Hellow";
+import Hello from "./lib/Hello";
 
 type Props = {
   [key: string]: any;
@@ -10,7 +10,7 @@ const App = (props: Props) => {
     <>
       <div>App</div>
       <img src="./assets/logo.png" width="100px" height="100px" alt="logo" />
-      <Hellow />
+      <Hello />
     </>
   );
 };
