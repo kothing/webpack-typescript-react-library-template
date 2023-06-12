@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Hello = (props: Props) => {
-  return <div>Hellow</div>;
+  return <div>Hello world</div>;
 };
 
 export default Hello;
