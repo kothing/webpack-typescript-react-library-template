@@ -28,25 +28,21 @@ const plugins = function () {
 const common_config = {
   entry: "./index.tsx",
   devtool: "source-map",
-
   devServer: {
     static: "./dist",
   },
-
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-};
-
-const dev_config = {
-  ...common_config,
-  mode: "development",
-  devtool: "inline-source-map",
   module: {
     rules: [
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"],
       },
       {
         test: /\.(ts|js)x?$/,
@@ -60,6 +56,12 @@ const dev_config = {
       },
     ],
   },
+};
+
+const dev_config = {
+  ...common_config,
+  mode: "development",
+  devtool: "inline-source-map",
   plugins: [
     new HtmlWebpackPlugin(
       Object.assign(
@@ -81,24 +83,6 @@ const prod_config = {
     publicPath: "./",
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-      },
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
   },
   plugins: [
     new HtmlWebpackPlugin(
