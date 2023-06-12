@@ -48,7 +48,9 @@ const common_config = {
           {
             loader: "less-loader",
             options: {
-              javascriptEnabled: true,
+              lessOptions: {
+                javascriptEnabled: true,
+              },
             },
           },
         ],
