@@ -4,8 +4,8 @@ type Props = {
   [key: string]: any;
 };
 
-const Hellow = (props: Props) => {
+const Hello = (props: Props) => {
   return <div>Hellow</div>;
 };
 
-export default Hellow;
+export default Hello;
