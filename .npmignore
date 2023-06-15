@@ -1,7 +1,18 @@
-# standard ignores
+# 
+.DS_Store
+
+# project files
+.vscode/
+.idea/
+.git/
+
+# modules
 node_modules/
+*.log
 
 # ignore src
+assets/
+public/
 src/**/*
 
 # dev config file
@@ -15,3 +26,7 @@ index.html
 tsconfig.json
 webpack.config.ts
 webpack.lib.config.ts
+
+# lock
+package-lock.json
+yarn.lock
