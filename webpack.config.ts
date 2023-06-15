@@ -26,7 +26,7 @@ const plugins = function () {
 };
 
 const common_config = {
-  entry: "./index.tsx",
+  entry: "./src/index.tsx",
   devtool: "source-map",
   devServer: {
     static: "./dist",
