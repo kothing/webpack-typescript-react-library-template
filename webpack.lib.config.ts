@@ -27,12 +27,12 @@ const {
   homepage,
 } = getPackageJson("name", "version", "description", "license", "author", "repository", "homepage");
 
-const banner = `name: ${pkgName}
- version: ${version}
- description: ${description}
- author: ${author}
- homepage: ${homepage}
- repository: ${repository.url}
+const banner = ` Name: ${pkgName}
+ Version: ${version}
+ Description: ${description}
+ Author: ${author}
+ Homepage: ${homepage}
+ Repository: ${repository.url}
 
  Copyright (c) ${author.replace(/ *<[^)]*> */g, " ")} and project contributors.
 
@@ -53,10 +53,30 @@ const common = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
+      {
         // Include ts, tsx, js, and jsx files.
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
     ],
   },
