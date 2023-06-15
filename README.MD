@@ -11,7 +11,8 @@ This template is built with the following technologies:
 - Language: **TypeScript**
 - Testing: **Jest**
 - Linting: **ESLint**
-- Formatting: **Prettier**
+- Style: **Less**
+- Formatting: **Prettier/Stylelint**
 - Bundling: **Webpack**
 - Transpiling: **Babel**
 - Lint Staged: **Husky**
