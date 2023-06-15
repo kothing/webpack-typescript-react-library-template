@@ -13,6 +13,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["**/src/", "./index.tsx"],
+  "include": ["**/src/"],
   "exclude": ["./node_modules", "./build", "./dist", "./lib", "./.vscode"]
 }
