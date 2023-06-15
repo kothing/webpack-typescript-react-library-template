@@ -21,9 +21,9 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development --hot",
     "build:website": "webpack --mode production",
-    "build:lib": "npm run build:types && npm run bundle",
+    "build:lib": "npm run build:types && npm run compile",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "compile": "babel src --out-dir dist --extensions \".js,.jsx,.ts,.tsx\" --source-maps inline",
     "bundle": "webpack --config webpack.lib.config.ts",
     "eslint": "eslint . --ext .js,.cjs,.ts,.jsx,.tsx, --quiet --fix --ignore-path ./.gitignore",
     "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,css,html,json}' ",
